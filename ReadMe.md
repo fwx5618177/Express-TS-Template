@@ -2,15 +2,23 @@
 
 - [ ] Makefile
 - [ ] docker
-- [ ] husky
-- [ ] prettier
-- [ ] TypeScript
-- [ ] Express
+- [x] husky
+- [x] eslint
+    - [x] lint-staged
+- [x] prettier
+- [x] TypeScript
+    - [x] ts-node
+    - [x] tsconfig-paths
+- [x] Express
 - [ ] nginx
 - [ ] swagger
-- [ ] nodemon
-- [ ] swc
+- [x] nodemon
+- [x] swc
 - [ ] cross-env
-- [ ] jest - TDD
-- [ ] eslint
-- [ ] pm2
+- [x] jest
+    - [x] ts-jest 
+- [x] pm2
+- [x] cross-env
+- [x] dotenv
+
+# 搭建流程
