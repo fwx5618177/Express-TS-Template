@@ -3,7 +3,13 @@
   "version": "0.0.0",
   "description": "TypeScript + Express API Server + Docker",
   "private": true,
+  "engineStrict": true,
+  "engines": {
+    "node": ">=14.0.0 < 16.0.0",
+    "npm": ">=6.0.0"
+  },
   "scripts": {
+    "prepare": "husky install",
     "start": "npm run build && cross-env NODE_ENV=production node dist/server.js",
     "dev": "cross-env NODE_ENV=development DEBUG=backend:* nodemon",
     "build": "swc src -d dist --source-maps --copy-files",
