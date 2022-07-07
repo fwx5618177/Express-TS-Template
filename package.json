@@ -17,8 +17,14 @@
     "test": "jest --forceExit --detectOpenHandles",
     "lint": "eslint --ignore-path .gitignore --ext .ts src/",
     "lint:fix": "npm run lint -- --fix",
+    "prisma:init": "prisma init",
+    "prisma:migrate": "prisma migrate dev --preview-feature",
+    "prisma:generate": "prisma generate",
     "deploy:prod": "npm run build && pm2 start ecosystem.config.js --only prod",
     "deploy:dev": "pm2 start ecosystem.config.js --only dev"
+  },
+  "prisma": {
+    "schema": "src/prisma/schema.prisma"
   },
   "dependencies": {
     "@babel/node": "^7.18.6",
@@ -39,6 +45,7 @@
     "@babel/core": "^7.18.6",
     "@babel/preset-env": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
+    "@prisma/client": "^4.0.0",
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.210",
     "@types/cookie-parser": "^1.4.3",
@@ -58,6 +65,7 @@
     "lint-staged": "^13.0.3",
     "nodemon": "^2.0.18",
     "prettier": "^2.7.1",
+    "prisma": "^4.0.0",
     "ts-node": "^10.8.2",
     "tsconfig-paths": "^4.0.0",
     "typescript": "^4.7.4"
