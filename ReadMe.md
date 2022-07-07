@@ -1,4 +1,6 @@
-# TypeScript + Express API Server 系统
+# TypeScript + Prisma + Express API Server 系统
+
+基于Express的一键搭建模板
 
 - [ ] Makefile
 - [ ] docker
@@ -35,7 +37,7 @@
 - [ ] winston - 简单且通用的日志库，支持多种传输
 - [ ] morgan - node.js 的 HTTP 请求记录器中间件
 - [ ] oss
-- [ ] prisma
+- [x] prisma
 
 # 功能介绍
 
