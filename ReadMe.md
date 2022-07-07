@@ -14,7 +14,7 @@
 - [ ] swagger
 - [x] nodemon
 - [x] swc
-- [ ] cross-env
+- [x] cross-env
 - [x] jest
     - [x] ts-jest 
 - [x] pm2
