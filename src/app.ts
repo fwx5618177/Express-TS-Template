@@ -1,10 +1,11 @@
 import express from 'express'
 import cors from 'cors'
+import helmet from 'helmet'
+import hpp from 'hpp'
+import compression from 'compression'
 import cookieParser from 'cookie-parser'
 import morgan from 'morgan'
 import chalk from 'chalk'
-import indexRouter from './routes/index'
-import usersRouter from './routes/users'
 import { Routes } from '@interfaces/routes.interface'
 import { LOG_FORMAT, NODE_ENV, ORIGIN, PORT, CREDENTIALS } from '@config'
 import { logger, stream } from '@utils/loggers'
@@ -53,7 +54,12 @@ class App {
             }),
         )
 
-        // this.app.use(CorsMiddleware)
+        this.app.use(CorsMiddleware)
+
+        this.app.use(hpp())
+        this.app.use(helmet())
+        this.app.use(compression())
+
         this.app.use(express.json())
         this.app.use(express.urlencoded({ extended: false }))
         this.app.use(cookieParser())

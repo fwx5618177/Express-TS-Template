@@ -27,7 +27,7 @@
 - [ ] supertest
 - [ ] class-transformer
 - [ ] bcrypt
-- [ ] compression
+- [ ] compression - Node.js 压缩中间件
 - [ ] helmet - 中间件，通过设置各种header来为express应用提供安全保护
 - [ ] hpp - 用于防止 HTTP 参数污染攻击的Express中间件
 - [ ] envalid
@@ -38,6 +38,7 @@
 - [ ] morgan - node.js 的 HTTP 请求记录器中间件
 - [ ] oss
 - [x] prisma
+- [ ] envalid - Envalid 是一个小型库，用于验证和访问 Node.js（v8.12 或更高版本）程序中的环境变量
 
 # 功能介绍
 
