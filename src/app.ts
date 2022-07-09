@@ -35,7 +35,7 @@ class App {
             logger.info(`=====================================`)
             logger.info(`======= ENV: ${chalk.red(this.env)} =======`)
             logger.info(`Listening on the port: ${chalk.green(this.port)}`)
-            logger.info(`Link: ${chalk.yellow('http://localhost:', this.port)}/`)
+            logger.info(`Link: ${chalk.bgGreenBright('http://localhost:' + this.port)}/`)
             logger.info(`=====================================`)
         })
     }

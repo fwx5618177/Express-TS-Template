@@ -2,14 +2,14 @@
  *  日志系统
  */
 import { LOG_DIR } from '@config'
-import { join } from 'path'
+import path from 'path'
 import winston from 'winston'
 import chalk from 'chalk'
 import winstonDaily from 'winston-daily-rotate-file'
 import { existsSync, mkdirSync } from 'fs'
 
 // logs dir
-const logDir: string = join(__dirname, LOG_DIR as string)
+const logDir: string = path.join(__dirname, String(LOG_DIR))
 
 if (!existsSync(logDir)) {
     mkdirSync(logDir)

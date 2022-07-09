@@ -11,9 +11,9 @@ export interface Routes {
 
 export const ClassCount: any[] = []
 
-export class baseI {
+export class BaseI {
     constructor() {
-        if (this.constructor !== baseI) {
+        if (this.constructor !== BaseI) {
             ClassCount.push(this)
         }
     }
