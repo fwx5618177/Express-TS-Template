@@ -25,7 +25,7 @@
   - [x] env.local
 - [x] cors
 - [ ] supertest
-- [x] class-transformer - 允许使用基于装饰器和非装饰器的验证
+- [x] class-transformer - 允许使用基于装饰器和非装饰器的验证，将普通对象转换为类的某个实例，允许根据标准序列化/反序列化对象
 - [ ] bcrypt
 - [x] compression - Node.js 压缩中间件
 - [x] helmet - 中间件，通过设置各种header来为express应用提供安全保护

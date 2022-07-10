@@ -11,6 +11,7 @@ const RouteLists: {
 } = {
     index: new IndexRoute(),
     users: new UserRoute(),
+    auth: new AuthRoute(),
 }
 
 export default RouteLists
