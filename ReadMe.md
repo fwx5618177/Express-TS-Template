@@ -12,8 +12,8 @@
   - [x] ts-node
   - [x] tsconfig-paths
 - [x] Express
-- [ ] nginx
-- [ ] swagger
+- [x] nginx
+- [x] swagger
 - [x] nodemon
 - [x] swc
 - [x] cross-env
@@ -24,15 +24,15 @@
 - [x] dotenv
   - [x] env.local
 - [x] cors
-- [ ] supertest
+- [ ] supertest - 用于测试 HTTP 服务器的 SuperAgent 驱动库
 - [x] class-transformer - 允许使用基于装饰器和非装饰器的验证，将普通对象转换为类的某个实例，允许根据标准序列化/反序列化对象
-- [ ] bcrypt
+- [x] bcrypt - 散列密码的库
 - [x] compression - Node.js 压缩中间件
 - [x] helmet - 中间件，通过设置各种header来为express应用提供安全保护
 - [x] hpp - 用于防止 HTTP 参数污染攻击的Express中间件
-- [ ] jsonwebtoken
-- [ ] swagger-jsdoc - 该库读取您的JSDoc 注释源代码并生成OpenAPI (Swagger) 规范
-- [ ] swagger-ui-express - 此模块允许您基于文件提供从 express自动生成的swagger-uiswagger.json生成的 API 文档。结果是通过路由从 API 服务器托管的 API 的实时文档。
+- [x] jsonwebtoken - JSON Web Token 实现（对称和非对称）
+- [x] swagger-jsdoc - 该库读取您的JSDoc 注释源代码并生成OpenAPI (Swagger) 规范
+- [x] swagger-ui-express - 此模块允许您基于文件提供从 express自动生成的swagger-uiswagger.json生成的 API 文档。结果是通过路由从 API 服务器托管的 API 的实时文档。
 - [x] winston - 简单且通用的日志库，支持多种传输
 - [x] morgan - node.js 的 HTTP 请求记录器中间件
 - [ ] oss
