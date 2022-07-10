@@ -9,6 +9,11 @@
             "date": 1657376353413,
             "name": "/Users/dz0401006/Desktop/online_express/backend/src/logs/error/2022-07-09.log",
             "hash": "3ca2904fef19eba2116081472815a92de0f031acefb65e5693c3d49961f47632"
+        },
+        {
+            "date": 1657448848268,
+            "name": "/Users/dz0401006/Desktop/online_express/backend/src/logs/error/2022-07-10.log",
+            "hash": "ce45012b713eed8ceb1fcec8f15774390bad505cc92617c5554303f3968056a9"
         }
     ],
     "hashType": "sha256"

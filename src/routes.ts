@@ -5,6 +5,7 @@
 import { Routes } from '@interfaces/routes.interface'
 import IndexRoute from '@routes/index.route'
 import UserRoute from '@routes/users.route'
+import AuthRoute from '@routes/auth.route'
 
 const RouteLists: {
     [key: string]: Routes
