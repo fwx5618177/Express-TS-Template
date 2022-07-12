@@ -1,9 +1,10 @@
 # TypeScript + Prisma + Express API Server 系统
+1. 一键化使用
+2. Docker的应用
 
-基于Express的一键搭建模板
-
-- [ ] Makefile
-- [ ] docker
+# 基于Express的一键搭建模板
+- [x] Makefile
+- [x] docker
 - [x] husky
 - [x] eslint
   - [x] lint-staged
@@ -41,3 +42,4 @@
 
 # 功能介绍
 
+TODO
