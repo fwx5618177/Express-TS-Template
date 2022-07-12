@@ -79,13 +79,16 @@ class App {
                     version: '1.0.0',
                     description: 'Example docs',
                 },
+                host: 'localhost:3000', // the host or url of the app
+                basePath: '/api', // the basepath of your endpoint
             },
-            apis: ['Swagger.yaml'],
+            explorer: true,
+            // apis: ['swagger.yaml'],
+            apis: ['**/*.ts'],
         }
 
         const specs = swaggerJSDoc(options)
-
-        this.app.use('/api-docs', swaggerUi.setup(specs))
+        this.app.use('/api', swaggerUi.serve, swaggerUi.setup(specs))
     }
 
     private initializeErrorHandling() {
