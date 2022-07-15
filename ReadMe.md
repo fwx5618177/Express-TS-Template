@@ -39,6 +39,7 @@
 - [ ] oss
 - [x] prisma
 - [x] envalid - Envalid 是一个小型库，用于验证和访问 Node.js（v8.12 或更高版本）程序中的环境变量
+- [x] graphql
 
 # 功能介绍
 

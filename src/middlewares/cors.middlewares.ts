@@ -18,11 +18,13 @@ const CorsMiddleware = (req: Request, res: Response, next: NextFunction) => {
         res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PATCH, PUT, DELETE')
         res.header('Allow', 'GET, POST, PATCH, OPTIONS, PUT, DELETE')
         res.header('X-Powered-By', 'moxi')
-        res.header('Content-Type', 'application/x-www-form-urlencoded; charset=utf-8')
+        res.header('Content-Type', 'application/json; charset=utf-8')
         res.header('Access-Control-Max-Age', '86400')
 
         next()
-    } catch (err) {}
+    } catch (err) {
+        next(err)
+    }
 }
 
 export default CorsMiddleware
