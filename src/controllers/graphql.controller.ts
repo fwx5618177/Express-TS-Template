@@ -19,6 +19,8 @@ class GraphqlController {
         try {
             const source = req.body.query
 
+            console.log(source)
+
             const graphqlSchema = loadGraphqlFileSync('../graphqls/schema.graphql')
 
             const schema = buildSchema(graphqlSchema)
@@ -26,9 +28,9 @@ class GraphqlController {
             // resolver
             const root = {
                 listPosts: async (): Promise<Post[]> => await this.graphqlService.listPosts(),
-                getPostById: async (postId: string): Promise<Post> => await this.graphqlService.getPostById(postId),
+                getPostById: async (args: { postId: string }): Promise<Post> => await this.graphqlService.getPostById(args.postId),
                 createPost: async (args: { post: CreatePostBlog }): Promise<Post> => await this.graphqlService.createPost(args.post),
-                deletePost: async (postId: string): Promise<Post> => await this.graphqlService.deletePost(postId),
+                deletePost: async (args: { postId: string }): Promise<Post> => await this.graphqlService.deletePost(args.postId),
                 updatePost: async (args: { post: CreatePostBlog }): Promise<Post> => await this.graphqlService.updatePost(args.post),
             }
 

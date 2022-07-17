@@ -29,7 +29,7 @@ class GraphqlService {
             },
         })) as Post
 
-        if (!findBlog) throw new HttpException(409, `Id ${post.id} already exists`)
+        if (findBlog) throw new HttpException(409, `Id ${post.id} already exists`)
 
         const createData: Post = await this.blog.create({
             data: {
@@ -65,7 +65,7 @@ class GraphqlService {
     public async deletePost(postId: string): Promise<Post> {
         if (!postId) throw new HttpException(400, 'Not blog:' + postId)
 
-        const findBlog: Post = (await this.blog.findUnique({
+        const findBlog: Post = (await this.blog.findUniqueOrThrow({
             where: {
                 id: postId,
             },
