@@ -1,6 +1,7 @@
 # TypeScript + Prisma + Express API Server 系统
 1. 一键化使用
 2. Docker的应用
+3. Graphql
 
 # 基于Express的一键搭建模板
 - [x] Makefile
@@ -44,3 +45,8 @@
 # 功能介绍
 
 TODO
+
+## 1. Graphql
+- 新增Graphql
+- 新增'http://localhost:3000/graphql', 'http://localhost:3000/graphql/mock'
+
