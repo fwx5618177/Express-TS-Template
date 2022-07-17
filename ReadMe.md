@@ -51,7 +51,7 @@ TODO
 - 新增Graphql
 - 新增'http://localhost:3000/graphql', 'http://localhost:3000/graphql/mock'
 
-0. 运行docker测试数据库: `docker-compose -f docker-compose-dev.yml up --force-recreate`
+0. 运行docker测试数据库: `docker-compose -f docker-compose-dev.yml up --force-recreate`, 运行`npm run prisma:migrate`
 1. 打开: `http://localhost:3000/graphql`，可以访问在线测试graphql平台
 2. CRUD:
 ```graphql
