@@ -24,6 +24,16 @@
             "date": 1657814404843,
             "name": "/Users/dz0401006/Desktop/online_express/backend/src/logs/debug/2022-07-15.log",
             "hash": "0e30a10ad7be0f72373d51fdc4fccde334f96a10125e1b8ff0334ff25b72a6be"
+        },
+        {
+            "date": 1657981833548,
+            "name": "/Users/dz0401006/Desktop/online_express/backend/src/logs/debug/2022-07-16.log",
+            "hash": "3c0255104e2b95ff23e4929d763a5286af38b97ac5a4fa660d3b1b8a7ba747a8"
+        },
+        {
+            "date": 1657987843052,
+            "name": "/Users/dz0401006/Desktop/online_express/backend/src/logs/debug/2022-07-17.log",
+            "hash": "d01f713f66b901b362b2de78fca7412ab79d78c83c05f7f2e7a0006534ed6d9f"
         }
     ],
     "hashType": "sha256"

@@ -40,7 +40,7 @@ class UserService {
             },
         })) as User
 
-        if (findUser) throw new HttpException(409, `Email ${userData.email} already exists`)
+        if (!findUser) throw new HttpException(409, `Email ${userData.email} already exists`)
 
         const hashedPassword: string = await hash(userData.password, 10)
         const createData: User = await this.users.create({

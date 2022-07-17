@@ -22,3 +22,10 @@ input UpdatePostBlog {
   content: String
 }
 
+type Mutation {
+  createPost(post: CreatePostBlog!): Post
+  deletePost(postId: String!): Post
+  updatePost(post: UpdatePostBlog!): Post
+}
+
+

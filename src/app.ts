@@ -13,6 +13,7 @@ import CorsMiddleware from '@middlewares/cors.middlewares'
 import swaggerJSDoc from 'swagger-jsdoc'
 import swaggerUi from 'swagger-ui-express'
 import errorMiddleware from '@/middlewares/error.middleware'
+import { ApolloServer, gql } from 'apollo-server-express'
 
 class App {
     public app: express.Application
@@ -28,6 +29,7 @@ class App {
         this.initializeRoutes(routes)
         this.initializeSwagger()
         this.initializeErrorHandling()
+        this.intialGraphqlApollo()
     }
 
     public listen() {
@@ -57,7 +59,7 @@ class App {
         this.app.use(CorsMiddleware)
 
         this.app.use(hpp())
-        this.app.use(helmet())
+        this.app.use(helmet({ contentSecurityPolicy: process.env.NODE_ENV === 'production' ? undefined : false, crossOriginEmbedderPolicy: false }))
         this.app.use(compression())
 
         this.app.use(express.json())
@@ -93,6 +95,23 @@ class App {
 
     private initializeErrorHandling() {
         this.app.use(errorMiddleware)
+    }
+
+    private async intialGraphqlApollo() {
+        const typeDefs = gql`
+            type Query {
+                hello: String
+            }
+        `
+
+        const resolvers = {
+            Query: {
+                hello: () => 'Hello world!',
+            },
+        }
+        const server = new ApolloServer({ typeDefs, resolvers })
+        await server.start()
+        server.applyMiddleware({ app: this.app })
     }
 }
 

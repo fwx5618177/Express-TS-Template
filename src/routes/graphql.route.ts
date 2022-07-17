@@ -12,37 +12,8 @@ class GrapglRoute implements Routes {
     }
 
     private initializeRoutes() {
-        this.router.get(`${this.path}`, this.graphqlController.graphqlProcess)
-        // this.router.get(`${this.path}`, (req, res) => {
-        //     res.header({
-        //         'Content-Type': 'application/json',
-        //     })
-        //         .status(200)
-        //         .json({
-        //             a: 'data',
-        //         })
-        // })
-        // try {
-        //     this.router.get(
-        //         `${this.path}`,
-        //         graphqlHTTP({
-        //             schema: this.schema as GraphQLSchema, // Must be provided
-        //             rootValue: this.root,
-        //             graphiql: true,
-        //         }),
-        //         (req, res) => {
-        //             res.header({
-        //                 'Content-Type': 'application/json',
-        //             })
-        //                 .status(200)
-        //                 .json({
-        //                     a: 'data',
-        //                 })
-        //         },
-        //     )
-        // } catch (err) {
-        //     console.log(err)
-        // }
+        this.router.post(`${this.path}`, this.graphqlController.graphqlProcess)
+        this.router.post(`${this.path}/mock`, this.graphqlController.graphqlProcessMock)
     }
 }
 

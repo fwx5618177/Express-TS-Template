@@ -3,7 +3,7 @@
  */
 import { Response, Request, NextFunction } from 'express'
 
-const whiteList: string[] = ['http://localhost:3001', 'http://192.168.3.49:3000']
+const whiteList: string[] = ['http://localhost:3001', 'http://192.168.3.49:3000', 'https://apollo-server-landing-page.cdn.apollographql.com']
 
 const CorsMiddleware = (req: Request, res: Response, next: NextFunction) => {
     try {
