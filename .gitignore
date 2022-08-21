@@ -5,6 +5,6 @@ dist/
 
 *.log
 
-*.local
-.env
+# *.local
+# .env
 .DS_Store
