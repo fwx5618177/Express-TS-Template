@@ -1,8 +1,9 @@
 version: '3'
 services:
   mysql:
+    platform: linux/amd64
     restart: always
-    image: mysql:5.7.18
+    image: mysql:5.7.34
     container_name: mysql-lable
     volumes:
     #   - /apps/mysql/mydir:/mydir
@@ -16,3 +17,19 @@ services:
       - "TZ=Asia/Shanghai"
     ports:
       - 3306:3306
+  reids:
+    platform: linux/amd64
+    image: redis:7.0.4
+    container_name: redis-lable
+    restart: always
+    privileged: true
+    volumes:
+      - ./docker/redis/redis.conf:/etc/redis/redis.conf
+    # command: redis-server /etc/redis/redis.conf
+    ports:
+      - 16379:6379
+    environment:
+      - REDIS_PASSWORD=1234
+      
+    # env_file:
+    #   - .env.development.local

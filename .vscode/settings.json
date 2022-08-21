@@ -1,7 +1,24 @@
 {
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+  },
+  "editor.formatOnSave": false,
+  "eslint.validate": [
+    "javascript",
+    "html",
+    "javascriptreact", // react jsx
+    "typescript", // ts
+    "typescriptreact" // react tsx
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
     },
-    "editor.formatOnSave": false
+    "editor.suggest.insertMode": "replace"
   }
-  
+}
