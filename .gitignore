@@ -5,7 +5,33 @@ dist/
 
 *.log
 
-# *.local
-# .env
+# Environment files
+*.local
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Database
+*.sqlite
+*.db
+
+# OS
 .DS_Store
 .npmrc
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
