@@ -85,7 +85,7 @@ class App {
                 basePath: '/api', // the basepath of your endpoint
             },
             explorer: true,
-            // apis: ['swagger.yaml'],
+            // apis: ['docs/swagger.yaml'],
             apis: ['**/*.ts'],
         }
 

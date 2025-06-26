@@ -2,19 +2,17 @@
  * 整合router
  */
 
-import { Routes } from '@interfaces/routes.interface'
-import IndexRoute from '@routes/index.route'
-import UserRoute from '@routes/users.route'
-import AuthRoute from '@routes/auth.route'
-import GrapglRoute from '@routes/graphql.route'
+import { Routes } from '@types'
+import { UserRoute } from '@/modules/users'
+import { AuthRoute } from '@/modules/auth'
+import { GraphqlRoute } from '@/modules/graphql'
 
 const RouteLists: {
     [key: string]: Routes
 } = {
-    index: new IndexRoute(),
     users: new UserRoute(),
     auth: new AuthRoute(),
-    graphql: new GrapglRoute(),
+    graphql: new GraphqlRoute(),
 }
 
 export default RouteLists

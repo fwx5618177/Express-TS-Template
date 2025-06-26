@@ -8,3 +8,4 @@ dist/
 # *.local
 # .env
 .DS_Store
+.npmrc
