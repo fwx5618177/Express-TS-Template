@@ -52,7 +52,7 @@ services:
       - REDIS_PASSWORD=1234
     networks:
       - backend
-
+      
 networks:
   backend:
     driver: bridge

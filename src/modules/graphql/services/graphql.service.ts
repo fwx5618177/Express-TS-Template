@@ -1,4 +1,4 @@
-import { CreatePostBlog, Post, UpdatePostBlog } from './graphql.dto'
+import { CreatePostBlog, Post, UpdatePostBlog } from '../dtos/graphql.dto'
 import { HttpException } from '@/exceptions/HttpException'
 import { isEmpty } from '@/utils/util'
 import { PrismaClient } from '@prisma/client'

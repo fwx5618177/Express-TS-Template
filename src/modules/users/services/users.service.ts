@@ -2,11 +2,11 @@
  * 用户服务
  */
 
-import { hash } from 'bcrypt'
+import { hash } from 'bcryptjs'
 import { PrismaClient, User } from '@prisma/client'
 import { HttpException } from '@/exceptions/HttpException'
 import { isEmpty } from '@/utils/util'
-import { CreateUserDto } from './users.dto'
+import { CreateUserDto } from '../dtos/users.dto'
 
 class UserService {
     public users = new PrismaClient().user

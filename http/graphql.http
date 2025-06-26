@@ -1,0 +1,248 @@
+ # GraphQL 接口测试
+# baseURL
+@baseURL = http://localhost:3000
+
+# 测试数据
+@testPostId = "test-post-123"
+@testTitle = "测试文章标题"
+@testContent = "这是一个测试文章的内容，用于验证GraphQL接口的功能。"
+@updatedTitle = "更新后的文章标题"
+@updatedContent = "这是更新后的文章内容。"
+
+###
+# 1. GraphQL Query - 获取所有文章
+POST {{baseURL}}/graphql
+Content-Type: application/json
+
+{
+    "query": "query { listPosts { id title content } }"
+}
+
+###
+# 2. GraphQL Query - 根据ID获取文章
+POST {{baseURL}}/graphql
+Content-Type: application/json
+
+{
+    "query": "query GetPost($postId: String!) { getPostById(postId: $postId) { id title content } }",
+    "variables": {
+        "postId": "{{testPostId}}"
+    }
+}
+
+###
+# 3. GraphQL Query - 查询不存在的文章
+POST {{baseURL}}/graphql
+Content-Type: application/json
+
+{
+    "query": "query GetPost($postId: String!) { getPostById(postId: $postId) { id title content } }",
+    "variables": {
+        "postId": "non-existent-post-id"
+    }
+}
+
+###
+# 4. GraphQL Mutation - 创建文章
+POST {{baseURL}}/graphql
+Content-Type: application/json
+
+{
+    "query": "mutation CreatePost($post: CreatePostBlog!) { createPost(post: $post) { id title content } }",
+    "variables": {
+        "post": {
+            "id": "{{testPostId}}",
+            "title": "{{testTitle}}",
+            "content": "{{testContent}}"
+        }
+    }
+}
+
+###
+# 5. GraphQL Mutation - 创建文章（不提供ID，测试自动生成）
+POST {{baseURL}}/graphql
+Content-Type: application/json
+
+{
+    "query": "mutation CreatePost($post: CreatePostBlog!) { createPost(post: $post) { id title content } }",
+    "variables": {
+        "post": {
+            "title": "自动生成ID的文章",
+            "content": "这篇文章没有提供ID，测试系统是否能自动生成。"
+        }
+    }
+}
+
+###
+# 6. GraphQL Mutation - 更新文章
+POST {{baseURL}}/graphql
+Content-Type: application/json
+
+{
+    "query": "mutation UpdatePost($post: UpdatePostBlog!) { updatePost(post: $post) { id title content } }",
+    "variables": {
+        "post": {
+            "id": "{{testPostId}}",
+            "title": "{{updatedTitle}}",
+            "content": "{{updatedContent}}"
+        }
+    }
+}
+
+###
+# 7. GraphQL Mutation - 只更新文章标题
+POST {{baseURL}}/graphql
+Content-Type: application/json
+
+{
+    "query": "mutation UpdatePost($post: UpdatePostBlog!) { updatePost(post: $post) { id title content } }",
+    "variables": {
+        "post": {
+            "id": "{{testPostId}}",
+            "title": "只更新标题"
+        }
+    }
+}
+
+###
+# 8. GraphQL Mutation - 只更新文章内容
+POST {{baseURL}}/graphql
+Content-Type: application/json
+
+{
+    "query": "mutation UpdatePost($post: UpdatePostBlog!) { updatePost(post: $post) { id title content } }",
+    "variables": {
+        "post": {
+            "id": "{{testPostId}}",
+            "content": "只更新内容部分。"
+        }
+    }
+}
+
+###
+# 9. GraphQL Mutation - 删除文章
+POST {{baseURL}}/graphql
+Content-Type: application/json
+
+{
+    "query": "mutation DeletePost($postId: String!) { deletePost(postId: $postId) { id title content } }",
+    "variables": {
+        "postId": "{{testPostId}}"
+    }
+}
+
+###
+# 10. GraphQL Mutation - 删除不存在的文章
+POST {{baseURL}}/graphql
+Content-Type: application/json
+
+{
+    "query": "mutation DeletePost($postId: String!) { deletePost(postId: $postId) { id title content } }",
+    "variables": {
+        "postId": "non-existent-post-id"
+    }
+}
+
+###
+# 11. GraphQL - 测试无效查询语法
+POST {{baseURL}}/graphql
+Content-Type: application/json
+
+{
+    "query": "invalid query syntax"
+}
+
+###
+# 12. GraphQL - 测试缺少必需参数
+POST {{baseURL}}/graphql
+Content-Type: application/json
+
+{
+    "query": "query GetPost($postId: String!) { getPostById(postId: $postId) { id title content } }"
+}
+
+###
+# 13. GraphQL - 测试错误的变量类型
+POST {{baseURL}}/graphql
+Content-Type: application/json
+
+{
+    "query": "query GetPost($postId: String!) { getPostById(postId: $postId) { id title content } }",
+    "variables": {
+        "postId": 123
+    }
+}
+
+###
+# 14. GraphQL - 复杂查询（选择部分字段）
+POST {{baseURL}}/graphql
+Content-Type: application/json
+
+{
+    "query": "query { listPosts { id title } }"
+}
+
+###
+# 15. GraphQL Mock 接口测试
+POST {{baseURL}}/graphql/mock
+Content-Type: application/json
+
+{
+    "query": "query { listPosts { id title content } }"
+}
+
+###
+# 16. GraphQL Mock - 创建文章测试
+POST {{baseURL}}/graphql/mock
+Content-Type: application/json
+
+{
+    "query": "mutation CreatePost($post: CreatePostBlog!) { createPost(post: $post) { id title content } }",
+    "variables": {
+        "post": {
+            "title": "Mock 测试文章",
+            "content": "这是通过 Mock 接口创建的测试文章。"
+        }
+    }
+}
+
+###
+# 17. GraphQL - 测试空查询
+POST {{baseURL}}/graphql
+Content-Type: application/json
+
+{
+    "query": ""
+}
+
+###
+# 18. GraphQL - 测试不完整的 JSON
+POST {{baseURL}}/graphql
+Content-Type: application/json
+
+{
+    "query": "query { listPosts { id title"
+
+###
+# 19. GraphQL - 测试 Introspection 查询
+POST {{baseURL}}/graphql
+Content-Type: application/json
+
+{
+    "query": "query IntrospectionQuery { __schema { types { name } } }"
+}
+
+###
+# 20. GraphQL - 测试多个操作
+POST {{baseURL}}/graphql
+Content-Type: application/json
+
+{
+    "query": "query GetPosts { listPosts { id title } } mutation CreatePost($post: CreatePostBlog!) { createPost(post: $post) { id } }",
+    "variables": {
+        "post": {
+            "title": "多操作测试",
+            "content": "测试多个操作的文章"
+        }
+    }
+}
